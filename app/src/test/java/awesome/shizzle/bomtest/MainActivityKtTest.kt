@@ -23,11 +23,14 @@ class MainActivityKtTest {
     @Test
     fun test() = mockkStatic("awesome.shizzle.bomtest.MainActivityKt") {
         everyComposable {
-            Greeting(name = any(), modifier = any())
+            Greeting(name = any())
         } answersComposable {
             Text("ItsNotMe")
         }
         composeTestRule.setContent {
+            Greeting(name = "Itsame")
+        }
+        verifyComposable {
             Greeting(name = "Itsame")
         }
         println(
