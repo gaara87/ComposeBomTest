@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'com.jeppeman.mockposable'
 
 mockposable {
-    plugins = ['mockk']
+    plugins = ['mockk', 'compose-ui']
 }
 
 android {
